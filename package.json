@@ -1,0 +1,25 @@
+{
+  "name": "consola-tareas",
+  "version": "1.0.0",
+  "description": "Gestión de tareas a través de la consola",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbianchijs/consola-tareas.git"
+  },
+  "keywords": [
+    "tareas",
+    "tasks",
+    "consola",
+    "console"
+  ],
+  "author": "Jose Martinez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbianchijs/consola-tareas/issues"
+  },
+  "homepage": "https://github.com/mbianchijs/consola-tareas#readme"
+}
