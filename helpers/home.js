@@ -39,13 +39,14 @@ const preguntas = [
 
 const menuHome = async () => {
 
+    console.clear();
     console.log('*****************************************');
     console.log(' Bienvenido sistema de gestión de tareas');
     console.log('*****************************************');
 
     const opt = await inquirer.prompt(preguntas);
 
-    return opt
+    return opt;
 }
 
 module.exports = { menuHome };
