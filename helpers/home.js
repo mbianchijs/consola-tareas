@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const colores = require('colors');
 
 const preguntas = [
     {
@@ -49,4 +50,23 @@ const menuHome = async () => {
     return opciones;
 }
 
-module.exports = { menuHome };
+const pausar = async () => {
+
+    const pregunta = [
+        {
+            type: "input",
+            name: "pausar",
+            message: `Presione ${ 'Enter'.blue } para continuar`
+        }
+    ]
+
+    const pausar = await inquirer.prompt(pregunta);
+
+    return pausar;
+
+}
+
+module.exports = { 
+    menuHome,
+    pausar 
+};

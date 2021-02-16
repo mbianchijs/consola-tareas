@@ -1,4 +1,4 @@
-const { menuHome, pausa } = require('./helpers/home');
+const { menuHome, pausar } = require('./helpers/home');
 const Tareas = require('./models/tareas');
 
 const principal = async () => {
@@ -9,6 +9,7 @@ const principal = async () => {
 
         opciones = await menuHome();
 
+        await pausar();
         
     } while (opciones !== 0) {
         
