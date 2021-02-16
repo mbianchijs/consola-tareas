@@ -66,13 +66,13 @@ const pausar = async () => {
 
 }
 
-const leerIngreso = async () => {
+const leerIngreso = async ( message ) => {
 
     const pregunta = [
         {
             type: "input",
             name: "ingreso",
-            message: "Descripción de la tarea:",
+            message,
             validate: function ( ingreso ) {
                 if( ingreso.legth == 0 ) {
                     return `${'Debe ingresar un valor'.red}`;
@@ -88,9 +88,6 @@ const leerIngreso = async () => {
     return ingreso;
 
 }
-
-
-
 
 
 module.exports = { 
