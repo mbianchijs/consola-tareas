@@ -3,15 +3,14 @@ const Tareas = require('./models/tareas');
 
 const principal = async () => {
 
-    let opt = 0;
+    let opciones = 0;
 
     do {
 
-        opt = await menuHome();
+        opciones = await menuHome();
 
-        console.log(opt);
         
-    } while (opt.opciones !== 0) {
+    } while (opciones !== 0) {
         
         console.log("¡Hasta luego!");
 
