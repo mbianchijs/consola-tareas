@@ -1,4 +1,8 @@
-const { menuHome, pausar } = require('./helpers/home');
+const { 
+    menuHome, 
+    pausar,
+    leerIngreso 
+} = require('./helpers/home');
 const Tareas = require('./models/tareas');
 
 const principal = async () => {
@@ -13,8 +17,9 @@ const principal = async () => {
         switch (opciones) {
             case 1:
                 // Crear tarea
-                tareas.crearTarea('Dormir');
-                
+                const ingreso = await leerIngreso('Ingrese el nombre de la tarea: ');
+                tareas.crearTarea(ingreso);
+
                 break;
             case 2:
                 // Listar todas las tareas

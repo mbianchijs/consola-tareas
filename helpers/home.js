@@ -74,7 +74,7 @@ const leerIngreso = async ( message ) => {
             name: "ingreso",
             message,
             validate: function ( ingreso ) {
-                if( ingreso.legth == 0 ) {
+                if( ingreso.length === 0 ) {
                     return `${'Debe ingresar un valor'.red}`;
                 }
 
