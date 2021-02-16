@@ -13,6 +13,7 @@ const principal = async () => {
         switch (opciones) {
             case 1:
                 // Crear tarea
+                tareas.crearTarea('Dormir');
                 
                 break;
             case 2:

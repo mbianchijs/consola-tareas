@@ -11,6 +11,7 @@ class Tarea {
 
         this.id = uuidv4();
         this.desc = desc;
+        this.fecha_ingreso = new Date();
 
     }
 

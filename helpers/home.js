@@ -66,7 +66,35 @@ const pausar = async () => {
 
 }
 
+const leerIngreso = async () => {
+
+    const pregunta = [
+        {
+            type: "input",
+            name: "ingreso",
+            message: "Descripción de la tarea:",
+            validate: function ( ingreso ) {
+                if( ingreso.legth == 0 ) {
+                    return `${'Debe ingresar un valor'.red}`;
+                }
+
+                return true;
+            }
+        }
+    ]
+
+    const { ingreso } = await inquirer.prompt(pregunta);
+
+    return ingreso;
+
+}
+
+
+
+
+
 module.exports = { 
     menuHome,
-    pausar 
+    pausar,
+    leerIngreso 
 };
