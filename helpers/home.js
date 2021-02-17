@@ -9,27 +9,27 @@ const preguntas = [
         choices: [
             {
                 value: 1,
-                name: "1. Crear una tarea"
+                name: `${'1.'.yellow} Crear una tarea`
             },
             {
                 value: 2,
-                name: "2. Listas todas las tareas"
+                name: `${'2.'.yellow} Listas todas las tareas`
             },
             {
                 value: 3,
-                name: "3. Listas tareas pendientes"
+                name: `${'3.'.yellow} Listas tareas pendientes`
             },
             {
                 value: 4,
-                name: "4. Listas tareas completadas"
+                name: `${'4.'.yellow} Listas tareas completadas`
             },
             {
                 value: 5,
-                name: "5. Eliminar tarea"
+                name: `${'5.'.yellow} Eliminar tarea`
             },
             {
                 value: 0,
-                name: "0. Salir"
+                name: `${'0.'.yellow} Salir`
             },
 
         ],
@@ -42,7 +42,7 @@ const menuHome = async () => {
 
     console.clear();
     console.log('*****************************************');
-    console.log(' Bienvenido sistema de gestión de tareas');
+    console.log(`${ 'Bienvenido sistema de gestión de tareas'.green }`);
     console.log('*****************************************');
 
     const {opciones} = await inquirer.prompt(preguntas);
