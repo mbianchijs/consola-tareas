@@ -3,7 +3,7 @@ const {
     pausar,
     leerIngreso 
 } = require('./helpers/home');
-const { insertTarea } = require('./helpers/tratarArchivo');
+const { insertTarea, leerTareas } = require('./helpers/tratarArchivo');
 const Tareas = require('./models/tareas');
 
 const principal = async () => {
@@ -24,9 +24,9 @@ const principal = async () => {
 
                 break;
             case 2:
-                // Listar todas las tareas
-                console.log(tareas.listarTareas);
-                
+                // Listar todas las tareas desde .json
+                console.log(leerTareas());
+
                 break;
             case 3:
                 // Listas tareas pendientes
