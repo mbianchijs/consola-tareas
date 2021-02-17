@@ -23,7 +23,7 @@ const principal = async () => {
                 break;
             case 2:
                 // Listar todas las tareas
-                console.log(tareas._listado);
+                console.log(tareas.listarTareas);
                 
                 break;
             case 3:
