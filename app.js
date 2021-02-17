@@ -3,6 +3,7 @@ const {
     pausar,
     leerIngreso 
 } = require('./helpers/home');
+const { insertTarea } = require('./helpers/tratarArchivo');
 const Tareas = require('./models/tareas');
 
 const principal = async () => {
@@ -19,6 +20,7 @@ const principal = async () => {
                 // Crear tarea
                 const ingreso = await leerIngreso('Ingrese el nombre de la tarea: ');
                 tareas.crearTarea(ingreso);
+                insertTarea(tareas.listarTareas);
 
                 break;
             case 2:
