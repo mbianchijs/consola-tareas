@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = './db/data.json';
 
-const insertTarea = ( tarea ) => {
+const insertTareaDB = ( tarea ) => {
 
     fs.writeFileSync(path, JSON.stringify(tarea));
 
 }
 
-const leerTareas = () => {
+const leerTareasDB = () => {
 
     if(!fs.existsSync(path)){
         return false;
@@ -19,4 +19,4 @@ const leerTareas = () => {
 
 }
 
-module.exports = { insertTarea, leerTareas }
+module.exports = { insertTareaDB, leerTareasDB }

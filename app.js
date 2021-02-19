@@ -3,13 +3,23 @@ const {
     pausar,
     leerIngreso 
 } = require('./helpers/home');
-const { insertTarea, leerTareas } = require('./helpers/tratarArchivo');
+const { 
+    insertTareaDB, 
+    leerTareasDB 
+} = require('./helpers/tratarArchivo');
+
 const Tareas = require('./models/tareas');
 
 const principal = async () => {
 
     let opciones = 0;
     const tareas = new Tareas();
+
+    const tareasDB = leerTareasDB();
+
+    if(tareasDB){
+        tareas.cargarTareasArrayDB(tareasDB);
+    }
 
     do {
 
@@ -20,12 +30,16 @@ const principal = async () => {
                 // Crear tarea
                 const ingreso = await leerIngreso('Ingrese el nombre de la tarea: ');
                 tareas.crearTarea(ingreso);
-                insertTarea(tareas.listarTareas);
+                insertTareaDB(tareas.listarTareas);
 
                 break;
             case 2:
                 // Listar todas las tareas desde .json
-                console.log(leerTareas());
+                if(leerTareasDB()){
+                    console.log(leerTareasDB());
+                } else {
+                    console.log("No hay tareas cargadas");
+                }
 
                 break;
             case 3:
