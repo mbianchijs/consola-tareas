@@ -53,8 +53,11 @@ const principal = async () => {
                 
                 break;
             case 5:
+                // Completar tarea
+                break;
+
+            case 6:
                 // Eliminar tarea
-                
                 break;
             
         }
