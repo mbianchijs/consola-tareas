@@ -128,10 +128,28 @@ const listadoTareasBorrar = async ( tareas = [] ) => {
 
 }
 
+const confirmarAccion = async ( message = '' ) => {
+
+    const pregunta = [
+        {
+
+            type: 'confirm',
+            name: 'ok',
+            message
+        }
+    ]
+
+    const { ok } = await inquirer.prompt(pregunta);
+
+    return ok;
+
+}
+
 
 module.exports = { 
     menuHome,
     pausar,
     leerIngreso,
-    listadoTareasBorrar 
+    listadoTareasBorrar,
+    confirmarAccion 
 };
