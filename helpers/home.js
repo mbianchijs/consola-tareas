@@ -25,7 +25,11 @@ const preguntas = [
             },
             {
                 value: 5,
-                name: `${'5.'.yellow} Eliminar tarea`
+                name: `${'5.'.yellow} Completar tarea(s)`
+            },
+            {
+                value: 6,
+                name: `${'6.'.yellow} Eliminar tarea`
             },
             {
                 value: 0,
