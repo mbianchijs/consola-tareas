@@ -1,7 +1,8 @@
 const { 
     menuHome, 
     pausar,
-    leerIngreso 
+    leerIngreso,
+    listadoTareasBorrar 
 } = require('./helpers/home');
 const { 
     insertTareaDB, 
@@ -58,6 +59,8 @@ const principal = async () => {
 
             case 6:
                 // Eliminar tarea
+                const id = await listadoTareasBorrar(tareas.listarTareas);
+                console.log(id);
                 break;
             
         }
