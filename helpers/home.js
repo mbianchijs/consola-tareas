@@ -103,8 +103,15 @@ const listadoTareasBorrar = async ( tareas = [] ) => {
             value: tarea.id,
             name: `${ indice } ${ tarea.desc }`
         }
-
+        
     });
+    
+    choices.unshift({
+        
+        value: 0,
+        name: '0. '.red + 'Cancelar'
+
+    })
 
     const preguntas = [
         {
@@ -114,8 +121,6 @@ const listadoTareasBorrar = async ( tareas = [] ) => {
             choices
         }
     ];
-
-
 
     const { id } = await inquirer.prompt(preguntas);
 
