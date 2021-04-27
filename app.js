@@ -36,7 +36,7 @@ const principal = async () => {
             case 2:
                 // Listar todas las tareas desde .json
                 if(leerTareasDB()){
-                    console.log(leerTareasDB());
+                    tareas.listadoCompleto();
                 } else {
                     console.log("No hay tareas cargadas");
                 }
@@ -58,6 +58,7 @@ const principal = async () => {
             
         }
 
+        console.log();
         await pausar();
         
     } while (opciones !== 0) {
