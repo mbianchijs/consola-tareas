@@ -44,11 +44,12 @@ const principal = async () => {
                 break;
             case 3:
                 // Listas tareas pendientes
-
+                tareas.listarCompletadasPendientes(false);
                 
                 break;
             case 4:
                 // Listar tareas completadas
+                tareas.listarCompletadasPendientes();
                 
                 break;
             case 5:

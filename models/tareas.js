@@ -52,6 +52,40 @@ class Tareas {
 
     }
 
+    listarCompletadasPendientes( completadas = true ) {
+
+        console.log();
+
+        if(!this.listarTareas) {
+
+            console.log("No hay tareas registradas");
+            return false;
+
+        }
+        
+        const resultado = this.listarTareas.filter(tarea => {
+            return completadas
+                ? tarea.fecha_completada != null 
+                : tarea.fecha_completada === null;
+        });
+
+        if(resultado.length !== 0) {
+            
+            resultado.forEach((tarea, index) => {
+                
+                const indice = `${ index + 1 }.`.green
+                const estado = `${ tarea.fecha_completada 
+                    ? 'Completada'.green 
+                    : 'Pendiente'.red}`
+                console.log(`${ indice } ${ tarea.desc } :: ${ estado }`)
+            })
+
+        } else {
+
+            console.log(`No hay tareas ${ completadas ? 'completadas' : 'pendientes' }`);
+        }
+
+    }
 
 }
 
