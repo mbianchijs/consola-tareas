@@ -36,6 +36,22 @@ class Tareas {
         
     }
 
+    listadoCompleto() {
+
+        console.log();
+        
+        this.listarTareas.forEach((tarea, index) => {
+            
+            const indice = `${ index + 1 }`.green
+            const estado = `${ tarea.fecha_completada 
+                ? 'Completada'.green 
+                : 'Pendiente'.red}`
+            console.log(`${ indice } ${ tarea.desc } :: ${ estado }`)
+            
+        });
+
+    }
+
 
 }
 
