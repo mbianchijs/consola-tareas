@@ -3,7 +3,8 @@ const {
     pausar,
     leerIngreso,
     listadoTareasBorrar, 
-    confirmarAccion
+    confirmarAccion,
+    mostrarListadoChecklist
 } = require('./helpers/home');
 const { 
     insertTareaDB, 
@@ -56,6 +57,10 @@ const principal = async () => {
                 break;
             case 5:
                 // Completar tarea
+                const ids = await mostrarListadoChecklist(tareas.listarTareas);
+
+                console.log(ids)
+
                 break;
 
             case 6:

@@ -93,6 +93,7 @@ const leerIngreso = async ( message ) => {
 
 
 }
+
 const listadoTareasBorrar = async ( tareas = [] ) => {
 
     const choices = tareas.map(( tarea, index ) => {
@@ -145,11 +146,40 @@ const confirmarAccion = async ( message = '' ) => {
 
 }
 
+const mostrarListadoChecklist = async ( tareas = [] ) => {
+
+    const choices = tareas.map(( tarea, index ) => {
+
+        const indice = `${ index + 1 }.`.green;
+
+        return {
+            value: tarea.id,
+            name: `${ indice } ${ tarea.desc }`,
+            checked: tarea.fecha_completada ? true : false
+        }
+        
+    });
+
+    const preguntas = [
+        {
+            type: "checkbox",
+            name: "ids",
+            message: "Seleccione",
+            choices
+        }
+    ];
+
+    const { ids } = await inquirer.prompt(preguntas);
+
+    return ids;
+
+}
 
 module.exports = { 
     menuHome,
     pausar,
     leerIngreso,
     listadoTareasBorrar,
-    confirmarAccion 
+    confirmarAccion,
+    mostrarListadoChecklist 
 };
