@@ -97,6 +97,7 @@ class Tareas {
 
     toogleCompletar( ids = [] ) {
 
+        // Ciclo solo para tareas no completadas
         ids.forEach(id => {
 
             if(!this._listado[id].fecha_completada) {
@@ -106,6 +107,15 @@ class Tareas {
             }
             
         });
+
+        // Ciclo para restaurar a null tareas completadas
+        this.listarTareas.forEach(tarea => {
+           
+            if(!ids.includes(tarea.id)) {
+                this._listado[tarea.id].fecha_completada = null;
+            }
+        })
+
     }
 
 }
