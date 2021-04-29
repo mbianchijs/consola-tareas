@@ -4,7 +4,7 @@ class Tareas {
 
     _listado = {}
 
-    // Al ser un setter, queda como un atributo de la clase
+    // Al ser un getter, queda como un atributo de la clase
 
     get listarTareas () {
 
@@ -93,6 +93,21 @@ class Tareas {
             delete this._listado[id];
         }
 
+    }
+
+    toogleCompletar( ids = [] ) {
+
+        ids.forEach(id => {
+
+            console.log(this._listado[id].fecha_completada);
+
+            if(!this._listado[id].fecha_completada) {
+
+                this._listado[id].fecha_completada = new Date();
+
+            }
+            
+        });
     }
 
 }

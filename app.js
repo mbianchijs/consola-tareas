@@ -58,9 +58,8 @@ const principal = async () => {
             case 5:
                 // Completar tarea
                 const ids = await mostrarListadoChecklist(tareas.listarTareas);
-
-                console.log(ids)
-
+                tareas.toogleCompletar(ids);
+                
                 break;
 
             case 6:
