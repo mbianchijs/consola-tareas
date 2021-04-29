@@ -18,6 +18,8 @@ const principal = async () => {
     let opciones = 0;
     const tareas = new Tareas();
 
+    // Comprobamos la existencia de tareas en la BD, 
+    // la traemos y luego cargamos en objeto _listado.
     const tareasDB = leerTareasDB();
 
     if(tareasDB){
@@ -29,6 +31,7 @@ const principal = async () => {
         opciones = await menuHome();
 
         switch (opciones) {
+
             case 1:
                 // Crear tarea
                 const ingreso = await leerIngreso('Ingrese el nombre de la tarea: ');
@@ -36,8 +39,9 @@ const principal = async () => {
                 insertTareaDB(tareas.listarTareas);
 
                 break;
+                
             case 2:
-                // Listar todas las tareas desde .json
+                // Listar todas las tareas
                 if(leerTareasDB()){
                     tareas.listadoCompleto();
                 } else {
@@ -45,16 +49,19 @@ const principal = async () => {
                 }
 
                 break;
+
             case 3:
                 // Listas tareas pendientes
                 tareas.listarCompletadasPendientes(false);
                 
                 break;
+
             case 4:
                 // Listar tareas completadas
                 tareas.listarCompletadasPendientes();
                 
                 break;
+
             case 5:
                 // Completar tarea
                 const ids = await mostrarListadoChecklist(tareas.listarTareas);
@@ -79,6 +86,7 @@ const principal = async () => {
 
         console.log();
 
+        // Hacemos persistente la data de la BD
         insertTareaDB(tareas.listarTareas);
         
         await pausar();

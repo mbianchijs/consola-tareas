@@ -41,7 +41,7 @@ const preguntas = [
     }
 ];
 
-
+// Imprime encabezado y despliega listado de funciones
 const menuHome = async () => {
 
     console.clear();
@@ -54,6 +54,7 @@ const menuHome = async () => {
     return opciones;
 }
 
+// Simula una pausa durante la navegación
 const pausar = async () => {
 
     const pregunta = [
@@ -70,6 +71,7 @@ const pausar = async () => {
 
 }
 
+// Captura la opción seleccionada
 const leerIngreso = async ( message ) => {
 
     const pregunta = [
@@ -94,6 +96,7 @@ const leerIngreso = async ( message ) => {
 
 }
 
+// Lista tareas a borrar
 const listadoTareasBorrar = async ( tareas = [] ) => {
 
     const choices = tareas.map(( tarea, index ) => {
@@ -129,6 +132,7 @@ const listadoTareasBorrar = async ( tareas = [] ) => {
 
 }
 
+// Genera una confirmación
 const confirmarAccion = async ( message = '' ) => {
 
     const pregunta = [
@@ -146,6 +150,7 @@ const confirmarAccion = async ( message = '' ) => {
 
 }
 
+// Devuelve listado con checklist para seleccionar tarea(s)
 const mostrarListadoChecklist = async ( tareas = [] ) => {
 
     const choices = tareas.map(( tarea, index ) => {
