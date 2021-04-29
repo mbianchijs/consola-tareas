@@ -5,7 +5,6 @@ class Tareas {
     _listado = {}
 
     // Al ser un getter, queda como un atributo de la clase
-
     get listarTareas () {
 
         const arreglo = [];
@@ -20,7 +19,8 @@ class Tareas {
     constructor( ) {
         this._listado = {}
     }
-
+    
+    // Cargamos las tareas provenientes de la BD al objeto _listado
     cargarTareasArrayDB( tareas = [] ) {
 
         tareas.forEach(tarea => {
@@ -36,6 +36,7 @@ class Tareas {
         
     }
 
+    // Devolvemos listado formateado
     listadoCompleto() {
 
         console.log();
@@ -52,10 +53,12 @@ class Tareas {
 
     }
 
+    // Devolvemos listado de tareas según estado enviado
     listarCompletadasPendientes( completadas = true ) {
 
         console.log();
 
+        // Comprobamos si existen tareas que mostrar
         if(!this.listarTareas) {
 
             console.log("No hay tareas registradas");
@@ -63,6 +66,7 @@ class Tareas {
 
         }
         
+        // Filtramos tareas según estado del parámetro enviado
         const resultado = this.listarTareas.filter(tarea => {
             return completadas
                 ? tarea.fecha_completada != null 
@@ -75,7 +79,7 @@ class Tareas {
                 
                 const indice = `${ index + 1 }.`.green
                 const estado = `${ tarea.fecha_completada 
-                    ? 'Completada'.green 
+                    ? 'Completada :: '.green + tarea.fecha_completada 
                     : 'Pendiente'.red}`
                 console.log(`${ indice } ${ tarea.desc } :: ${ estado }`)
             })
@@ -97,7 +101,7 @@ class Tareas {
 
     toogleCompletar( ids = [] ) {
 
-        // Ciclo solo para tareas no completadas
+        // Ciclo solo para colocar fechas a tareas (marcada completada)
         ids.forEach(id => {
 
             if(!this._listado[id].fecha_completada) {
@@ -108,7 +112,7 @@ class Tareas {
             
         });
 
-        // Ciclo para restaurar a null tareas completadas
+        // Ciclo para restaurar a null tareas (desmarcadas o no completadas)
         this.listarTareas.forEach(tarea => {
            
             if(!ids.includes(tarea.id)) {
