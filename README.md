@@ -14,8 +14,8 @@ Aplicación básica para la gestión de tareas mediante consola.
 ## Instrucciones
 
 - Clonar repositorio o descomprimir en el lugar deseado.
-- En la terminal, ubicarnos en directorio de la aplicación y ejecutar `npm install`
 - Crear carpeta "db" en el directorio raíz.
+- En la terminal, desplazarse hasta el directorio de la aplicación, ejecutar `npm install`, y posteriormente `npm start`
 
 ## Licencia
 
