@@ -99,8 +99,6 @@ class Tareas {
 
         ids.forEach(id => {
 
-            console.log(this._listado[id].fecha_completada);
-
             if(!this._listado[id].fecha_completada) {
 
                 this._listado[id].fecha_completada = new Date();

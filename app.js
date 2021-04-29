@@ -59,7 +59,7 @@ const principal = async () => {
                 // Completar tarea
                 const ids = await mostrarListadoChecklist(tareas.listarTareas);
                 tareas.toogleCompletar(ids);
-                
+
                 break;
 
             case 6:
@@ -78,6 +78,9 @@ const principal = async () => {
         }
 
         console.log();
+
+        insertTareaDB(tareas.listarTareas);
+        
         await pausar();
         
     } while (opciones !== 0) {
